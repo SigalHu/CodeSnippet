@@ -3,6 +3,6 @@
 using namespace std;
 
 int main() {
-    cout<<manacher("123")<<endl;
+    cout<<manacher("abcddddabcdcb")<<endl;
     return 0;
 }
