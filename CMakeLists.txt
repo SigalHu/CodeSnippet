@@ -6,14 +6,18 @@ set(CMAKE_CXX_STANDARD 14)
 add_subdirectory(./googletest)
 
 include_directories(
-        include
+        ./src/string
         ./googletest/googletest/include/gtest
 )
 
 link_directories(./googletest)
 set(LIBRARIES gtest pthread)
 
-aux_source_directory(./source DIR_SRCS)
+aux_source_directory(
+        ./src/string
+        DIR_SRCS
+)
+
 set(SOURCE_FILES main.cpp ${DIR_SRCS})
 
 add_executable(CodeSnippet ${SOURCE_FILES})
