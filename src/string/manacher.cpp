@@ -27,7 +27,7 @@ int manacher(string str) {
             max_len = max(max_right, max_len);
         } else {
             jj = pos - (ii - pos);
-            if (jj - len[jj] <= pos - max_right) {
+            if (jj - len[jj] == pos - max_right) {
                 for (len[ii] = pos + max_right - ii; ii + len[ii] < str1.size() && ii - len[ii] >= 0; len[ii]++) {
                     if (str1[ii + len[ii]] != str1[ii - len[ii]])
                         break;
