@@ -7,18 +7,17 @@ add_subdirectory(./googletest)
 
 include_directories(
         ./src/string
+        ./src/sort
         ./googletest/googletest/include/gtest
 )
 
 link_directories(./googletest)
 set(LIBRARIES gtest pthread)
 
-aux_source_directory(
-        ./src/string
-        DIR_SRCS
-)
+aux_source_directory(./src/string SRC_STRING)
+aux_source_directory(./src/sort SRC_SORT)
 
-set(SOURCE_FILES main.cpp ${DIR_SRCS})
+set(SOURCE_FILES main.cpp ${SRC_STRING} ${SRC_SORT})
 
 add_executable(CodeSnippet ${SOURCE_FILES})
 target_link_libraries(CodeSnippet ${LIBRARIES})
