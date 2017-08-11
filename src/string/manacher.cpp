@@ -16,9 +16,9 @@ int manacher(string str) {
     // 遍历字符串
     vector<int> len(max_loc + 1, 1);
     int max_len = 1;
-    for (int ii = 1, jj, pos = 0, max_right = 1; ii < str1.size(); ii++) {
+    for (int ii = 1, jj, pos = 0, max_right = 1; ii < str1.size(); ++ii) {
         if (ii - pos >= max_right) {
-            for (; ii + len[ii] < str1.size() && ii - len[ii] >= 0; len[ii]++) {
+            for (; ii + len[ii] < str1.size() && ii - len[ii] >= 0; ++len[ii]) {
                 if (str1[ii + len[ii]] != str1[ii - len[ii]])
                     break;
             }
@@ -28,13 +28,15 @@ int manacher(string str) {
         } else {
             jj = pos - (ii - pos);
             if (jj - len[jj] == pos - max_right) {
-                for (len[ii] = pos + max_right - ii; ii + len[ii] < str1.size() && ii - len[ii] >= 0; len[ii]++) {
+                for (len[ii] = pos + max_right - ii; ii + len[ii] < str1.size() && ii - len[ii] >= 0; ++len[ii]) {
                     if (str1[ii + len[ii]] != str1[ii - len[ii]])
                         break;
                 }
                 pos = ii;
                 max_right = len[ii];
                 max_len = max(max_right, max_len);
+            } else if (jj - len[jj] < pos - max_right) {
+                len[ii] = pos + max_right - ii;
             } else {
                 len[ii] = len[jj];
             }

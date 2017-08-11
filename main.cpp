@@ -30,8 +30,9 @@ using namespace std;
 //}
 
 TEST(Gtest, ManacherTest){
-    ASSERT_EQ(8,manacher("dadadhsaffashg"));
-    ASSERT_EQ(7,manacher("dadadhsafashg"));
+    ASSERT_EQ(1,manacher("abcdef"));
+    ASSERT_EQ(7,manacher("babcbabcd"));
+    ASSERT_EQ(11,manacher("dcbcbabcbcbabc"));
 }
 
 int main(int argc, char** argv) {
