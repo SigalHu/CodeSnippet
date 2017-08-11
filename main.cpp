@@ -21,7 +21,7 @@ TEST_F(Gtest, SortTest){
         cout<<"start testing "<<ii+1<<"..."<<endl;
         reset_data();
         EXPECT_EQ(false, is_sorted(v.begin(),v.end()));
-        insertion_sort3(v.data(),v.size());
+        heap_sort(v.data(),v.size());
         ASSERT_EQ(true, is_sorted(v.begin(),v.end()));
     }
 }
