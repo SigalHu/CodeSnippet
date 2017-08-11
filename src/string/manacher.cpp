@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+//#include "gtest.h"
 using namespace std;
 
 // Manacher 算法
@@ -44,3 +45,14 @@ int manacher(string str) {
     }
     return max_len - 1;
 }
+
+//TEST(Gtest, ManacherTest){
+//    ASSERT_EQ(1,manacher("abcdef"));
+//    ASSERT_EQ(7,manacher("babcbabcd"));
+//    ASSERT_EQ(11,manacher("dcbcbabcbcbabc"));
+//}
+//
+//int main(int argc, char** argv) {
+//    testing::InitGoogleTest(&argc, argv);
+//    return RUN_ALL_TESTS();
+//}
