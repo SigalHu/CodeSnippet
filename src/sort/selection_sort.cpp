@@ -72,18 +72,18 @@ void heap_sort(int *arr,int len){
     }
 }
 
-class Gtest:public testing::Test{
-public:
-    vector<int> v;
-    default_random_engine random_eng;
-    void reset_data(){
-        uniform_int_distribution<int> random(0,100000);
-        v.resize(10000);
-        for(int &vv:v){
-            vv = random(random_eng);
-        }
-    }
-};
+//class Gtest:public testing::Test{
+//public:
+//    vector<int> v;
+//    default_random_engine random_eng;
+//    void reset_data(){
+//        uniform_int_distribution<int> random(0,100000);
+//        v.resize(10000);
+//        for(int &vv:v){
+//            vv = random(random_eng);
+//        }
+//    }
+//};
 
 //TEST_F(Gtest, SortTest){
 //    for(int ii=0;ii<100;ii++){
