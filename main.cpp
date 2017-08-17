@@ -1,6 +1,7 @@
 #include <iostream>
 #include "gtest.h"
 #include "my_sort.h"
+#include "my_system.h"
 using namespace std;
 
 class Gtest:public testing::Test{
@@ -28,6 +29,8 @@ TEST_F(Gtest, SortTest){
 }
 
 int main(int argc, char** argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+//    testing::InitGoogleTest(&argc, argv);
+//    return RUN_ALL_TESTS();
+    cout<<is_little_endian()<<endl;
+    return 0;
 }
